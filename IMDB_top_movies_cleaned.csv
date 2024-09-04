@@ -1,0 +1,31 @@
+rank,name,year,imdb_rating,duration,genre,director_name,group_members_have_seen
+1,The Shawshank Redemption,1994,9.3,142,Drama,Frank Darabont,
+2,The Godfather,1972,9.2,175,"Crime,Drama",Francis Ford Coppola,Cam Kirn
+3,The Dark Knight,2008,9.0,152,"Action,Crime,Drama",Christopher Nolan,"Jasper Henderson, Cam Kirn"
+4,The Godfather Part II,1974,9.0,202,"Crime,Drama",Francis Ford Coppola,
+5,12 Angry Men,1957,9.0,96,"Crime,Drama",Sidney Lumet,
+6,Schindler's List,1993,9.0,195,"Biography,Drama,History",Steven Spielberg,
+7,The Lord of the Rings: The Return of the King,2003,9.0,201,"Action,Adventure,Drama",Peter Jackson,"Jasper Henderson, Cam Kirn, Wade Bradford"
+8,Pulp Fiction,1994,8.9,154,"Crime,Drama",Quentin Tarantino,"Wade Bradford, Cam Kirn"
+9,The Lord of the Rings: The Fellowship of the Ring,2001,8.8,178,"Action,Adventure,Drama",Peter Jackson,"Wade Bradford, Cam Kirn"
+10,"Il buono, il brutto, il cattivo",1966,8.8,161,"Adventure,Western",Sergio Leone,
+11,Forrest Gump,1994,8.8,142,"Drama,Romance",Robert Zemeckis,"Jasper Henderson, Cam Kirn"
+12,Fight Club,1999,8.8,139,Drama,David Fincher,
+13,Inception,2010,8.8,148,"Action,Adventure,Sci-Fi",Christopher Nolan,"Wade Bradford, Cam Kirn"
+14,The Lord of the Rings: The Two Towers,2002,8.8,179,"Action,Adventure,Drama",Peter Jackson,"Jasper Henderson, Cam Kirn, Wade Bradford"
+15,The Empire Strikes Back,1980,8.7,124,"Action,Adventure,Fantasy",Irvin Kershner,"Jasper Henderson, Cam Kirn"
+16,The Matrix,1999,8.7,136,"Action,Sci-Fi","Lana Wachowski,Lilly Wachowski","Wade Bradford, Cam Kirn"
+17,Goodfellas,1990,8.7,145,"Biography,Crime,Drama",Martin Scorsese,Cam Kirn
+18,One Flew Over the Cuckoo's Nest,1975,8.7,133,Drama,Milos Forman,
+19,Se7en,1995,8.6,127,"Crime,Drama,Mystery",David Fincher,
+20,Shichinin no samurai,1954,8.6,207,"Action,Drama",Akira Kurosawa,
+21,It's a Wonderful Life,1946,8.6,130,"Drama,Family,Fantasy",Frank Capra,"Jasper Henderson,"
+22,The Silence of the Lambs,1991,8.6,118,"Crime,Drama,Thriller",Jonathan Demme,
+23,Cidade de Deus,2002,8.6,130,"Crime,Drama","Fernando Meirelles,Katia Lund",
+24,Saving Private Ryan,1998,8.6,169,"Drama,War",Steven Spielberg,"Jasper Henderson, Cam Kirn"
+25,La vita e bella,1997,8.6,116,"Comedy,Drama,Romance",Roberto Benigni,
+26,The Green Mile,1999,8.6,189,"Crime,Drama,Fantasy",Frank Darabont,
+27,Interstellar,2014,8.6,169,"Adventure,Drama,Sci-Fi",Christopher Nolan,
+28,Star Wars,1977,8.6,121,"Action,Adventure,Fantasy",George Lucas,"Jasper Henderson, Cam Kirn, Wade Bradford"
+29,Terminator 2: Judgment Day,1991,8.6,137,"Action,Sci-Fi",James Cameron,Wade Bradford
+30,Back to the Future,1985,8.5,116,"Adventure,Comedy,Sci-Fi",Robert Zemeckis,"Jasper Henderson, Cam Kirn, Wade Bradford"
