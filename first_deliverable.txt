@@ -1,1 +1,1 @@
-The data we are using is from the IMDB Top Movies database. Each entity is a movie with these attributes: rating, duration, genre, director name, and the group members that have seen it. 
+The data we are using is from the IMDB Top Movies database: https://www.kaggle.com/datasets/ashishjangra27/imdb-top-250-movies?select=movies.csv. Each entity is a movie with these attributes: rating, duration, genre, director name, and the group members that have seen it. 
