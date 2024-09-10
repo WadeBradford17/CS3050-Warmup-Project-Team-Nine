@@ -1,7 +1,7 @@
 Queryable Column keywords: Title, Year, Duraton, Director, Genre, Watched_by
 Query operators: =, >, <, !
 Query Joiners: &
-Query Structure: catetory operator "input"
+Query Structure: category operator "input"
 additional commands: help - will bring up help menu which describes how to form a query
 
 CFG:
