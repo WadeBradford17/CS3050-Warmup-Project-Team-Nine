@@ -1,0 +1,12 @@
+Queryable Column keywords: Title, Year, Duraton, Director, Genre, Watched_by
+Query operators: =, >, <, !
+Query Joiners: &
+Query Structure: catetory operator "input"
+additional commands: help - will bring up help menu which describes how to form a query
+
+CFG:
+S -> KOI || KOIJS
+K -> Title || Year || Duraton || Director || Genre || Watched_by
+O -> = || > || < || !
+I -> user input within quotes ex: "The Dark Knight" inputs will not be case sensitive
+J -> &
