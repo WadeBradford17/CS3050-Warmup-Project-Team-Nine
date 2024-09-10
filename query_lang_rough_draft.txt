@@ -1,0 +1,37 @@
+Operators
+Comparison: <, >, ==, <=, >=, !=
+Boolean: &&, ||, !
+
+Data
+rank
+name
+year
+rating
+length
+genre
+director
+viewers
+
+Misc Keywords
+help
+quit
+of
+
+More Info
+If field has no data, return N/A
+help should return the previous 3 sections, as well as an example query
+of should return the value associated with a specific movie (the query [director of “The Dark Knight”] should return “Christopher Nolan”)
+> will be our prompt character, to tell the user the system is waiting for a query
+
+Example Queries
+> year >= 2010
+should return Inception, Interstellar
+
+> director == “Frank Darabont”
+should return The Shawshank Redemption, The Green Mile
+
+> viewers of “The Shawshank Redemption”
+should return N/A
+
+> genre != “Crime” && rating > 8.8
+should return The Shawshank Redemption, Schindler’s List, The Lord of the Rings: The Return of the King
