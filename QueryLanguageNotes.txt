@@ -1,5 +1,5 @@
-Queryable Column keywords: title, rating, year, duraton, director, genre, viewers, rank
-Query operators: ==, >,>=, <,<=, !=, of
+Queryable Column keywords: title, rating, year, duration, director, genre, viewers, rank
+Query operators: ==, >,>=, <,<=, !=, of, all
 Query Joiners: &&, ||
 Query Structure: category operator "input"
 
@@ -12,13 +12,13 @@ S -> Q || QJQ || M
 Q -> LOI || KFT || HCN
 J -> && || "||"
 L -> title || director || genre || viewers
-H -> year || rank || rating || duraton
-K -> title || year || duraton || director || genre || viewers || rating || rank
+H -> year || rank || rating || duration
+K -> year || duration || director || genre || viewers || rating || rank
 O -> == || !=
 C ->  == || != || > || >= || < || <=
 F -> of
 I -> user input within quotes ex: "Peter Jackson" inputs will not be case sensitive, cannot be a number
-T -> user input movie title within quotes ex: "The Dark Knight" inputs will not be case sensitive
+T -> all || user input movie title within quotes ex: "The Dark Knight" inputs will not be case sensitive
 N -> user input number within quotes ex: "8.8"
 M -> help || quit
 
@@ -35,7 +35,7 @@ year: 2008
 rating:	9.0
 duration:	152
 genres:	Action,Crime,Drama
-Director:	Christopher Nolan, 
+Director:	Christopher Nolan
 viewers: Jasper Henderson, Cam Kirn, Max Schwarz
 
 more example queries:
