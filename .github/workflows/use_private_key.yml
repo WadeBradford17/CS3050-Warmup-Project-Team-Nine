@@ -1,0 +1,6 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up environment
+      run: echo "PRIVATE_KEY=${{ secrets.PRIVATE_KEY }}" >> $GITHUB_ENV

@@ -7,7 +7,7 @@ from firebase_admin import firestore, credentials
 #    pip install google-cloud-firestore
 
 # firebase admin sdk configuration
-cred = credentials.Certificate('service_account_info.json')
+cred = credentials.Certificate('firebase_service_account_info.json')
 firebase_admin.initialize_app(cred)
 
 # initialize firestore db
