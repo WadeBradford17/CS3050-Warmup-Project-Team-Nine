@@ -39,7 +39,7 @@ The Shawshank Redemption, The Green Mile
 
 Functional Interface: 
 
-A function will read the string provided by the query input, and call the necessary function to access data corresponding to what the query is requesting.
+A function will read the string provided by the query input, and call the necessary function to access the requested data.
 
 Functions: 
 
