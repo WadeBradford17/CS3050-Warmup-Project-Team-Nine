@@ -1,8 +1,5 @@
 import json
-from firebase_admin import firestore
-
-# initialize firestore db
-movie_database = firestore.client()
+from firebase_authentication import movie_database
 
 # load movie data json
 with open('imdb-movie-data.json') as file:

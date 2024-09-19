@@ -1,3 +1,5 @@
+from firebase_authentication import movie_database
+
 fields = ['title', 'rating', 'year', 'duration', 'director', 'genre', 'viewers', 'rank']
 operators = ['==', '>', '<', '>=', '<=', '!=', 'of']
 joiners = ['||', '&&']
@@ -8,6 +10,9 @@ valid_belonging_check = ['rating', 'year', 'duration', 'director', 'genre', 'vie
 eq_operators = ['==', '!=']
 comp_operators = ['==', '>', '<', '>=', '<=', '!=']
 movies = ["the dark knight", "star wars", "se7en"]
+
+collection_ref = movie_database.collection('Movies')
+
 
 def is_valid_num(num):
     if num.replace('.', '', 1).isdigit():
