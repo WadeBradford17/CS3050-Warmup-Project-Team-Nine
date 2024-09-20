@@ -1,4 +1,4 @@
-from firebase_authentication import movie_database
+from interface import get_title_from_firestore, get_field_from_firestore, get_info_from_firestore, load_movies
 
 fields = ['title', 'rating', 'year', 'duration', 'director', 'genre', 'viewers', 'rank']
 operators = ['==', '>', '<', '>=', '<=', '!=', 'of']
@@ -9,9 +9,7 @@ valid_comp_check = ['year', 'rank', 'rating', 'duration']
 valid_belonging_check = ['rating', 'year', 'duration', 'director', 'genre', 'viewers', 'rank']
 eq_operators = ['==', '!=']
 comp_operators = ['==', '>', '<', '>=', '<=', '!=']
-movies = ["the dark knight", "star wars", "se7en"]
-
-collection_ref = movie_database.collection('Movies')
+movies = load_movies()
 
 
 def is_valid_num(num):
@@ -19,18 +17,14 @@ def is_valid_num(num):
         return True
     return False
 
-def is_valid_movie(title):
-    if title in movies:
-        return True
-    return False
 
 def get_user_input(input):
-    if ('"' not in input or input.index('"') == input.rfind('"')):
+    if '"' not in input or input.index('"') == input.rfind('"'):
         return "Invalid Query"
     return input[input.index('"') + 1:input.rfind('"')]
 
+
 def parse_query(query):
-    query = query.lower()
     if query in keywords:
         if query == 'help':
             return "Help Menu"
@@ -66,18 +60,22 @@ def parse_query(query):
             if input == "Invalid Query" and secondTerm != 'all':
                 return "Invalid Query"
             if firstTerm in valid_eq_check and operator in eq_operators:
-                return "Lookup " + firstTerm + f' {operator} ' + input
+                if firstTerm != 'title':
+                    return get_title_from_firestore(firstTerm, operator, input)
+                else:
+                    return get_info_from_firestore(input)
             elif firstTerm in valid_comp_check and operator in comp_operators:
                 if not is_valid_num(input):
                     return "Invalid Query"
-                return "Lookup " + firstTerm + f' {operator} ' + input
+                return get_title_from_firestore(firstTerm, operator, input)
             elif firstTerm in valid_belonging_check and operator == 'of':
                 if secondTerm == 'all':
-                    return "Lookup all " + firstTerm
+                    rtn_str = ""
+                    for movie in movies:
+                        rtn_str += get_field_from_firestore(firstTerm, movie)
+                    return rtn_str
                 else:
-                    if not is_valid_movie(input):
-                        return "Invalid Query"
-                    return "Lookup " + firstTerm + f' {operator} ' + input
+                    return get_field_from_firestore(firstTerm, input)
 
     return "Invalid Query"
 
