@@ -67,7 +67,7 @@ def parse_query(query):
             elif firstTerm in valid_comp_check and operator in comp_operators:
                 if not is_valid_num(input):
                     return "Invalid Query"
-                return get_title_from_firestore(firstTerm, operator, input)
+                return get_title_from_firestore(firstTerm, operator, float(input))
             elif firstTerm in valid_belonging_check and operator == 'of':
                 if secondTerm == 'all':
                     rtn_str = ""
