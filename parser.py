@@ -27,6 +27,14 @@ def get_user_input(input):
         return INVALID_QUERY
     return input[input.index('"') + 1:input.rfind('"')]
 
+def help_menu():
+    menu = 'Queryable Column keywords: title, rating, year, duration, director, genre, viewers, rank \n' + \
+                'Query operators: ==, >,>=, <,<=, !=, of, all\nQuery Joiners: &&, ||\n' + \
+                'Query Structure: keyword operator "input" Optional: Joiner keyword operator "input"\n' + \
+                'Note: The query input is case sensitive and the inputs must be in quotes\n\n' + \
+                'Example query:\n> director of "Star Wars"\nGeorge Lucas\n'
+
+    return menu
 
 def input_not_found(list):
     if len(list) == 1 and re.fullmatch(r"Could not find '.*' in database", list[0]):
