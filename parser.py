@@ -23,11 +23,19 @@ def get_user_input(input):
         return "Invalid Query"
     return input[input.index('"') + 1:input.rfind('"')]
 
+def help_menu():
+    menu = 'Queryable Column keywords: title, rating, year, duration, director, genre, viewers, rank \n' + \
+                'Query operators: ==, >,>=, <,<=, !=, of, all\nQuery Joiners: &&, ||\n' + \
+                'Query Structure: keyword operator "input" Optional: Joiner keyword operator "input"\n' + \
+                'Note: The query input is case sensitive and the inputs must be in quotes\n\n' + \
+                'Example query:\n> director of "Star Wars"\nGeorge Lucas\n'
+
+    return menu
 
 def parse_query(query):
     if query in keywords:
         if query == 'help':
-            return "Help Menu"
+            return help_menu()
         else:
             exit(0)
 
