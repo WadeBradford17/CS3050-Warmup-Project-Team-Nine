@@ -95,11 +95,8 @@ def rank_less_than_equal_test():
 
 def rank_of_test():
     test_input = '"Interstellar"'
-    expected = "27"
+    expected = 27
     result = parser.parse_query('rank of ' + test_input)
-
-    print(result + "\n") # TODO: investigate returning as int type
-
     if expected == result:
         print("PASSED rank_of_test")
     else:
