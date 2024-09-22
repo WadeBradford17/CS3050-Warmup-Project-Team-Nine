@@ -1,6 +1,6 @@
 import re
 
-from interface import get_title_from_firestore, get_field_from_firestore, get_info_from_firestore, load_movies
+from firebase_interface import get_title_from_firestore, get_field_from_firestore, get_info_from_firestore, load_movies
 
 fields = ['title', 'rating', 'year', 'duration', 'director', 'genre', 'viewers', 'rank']
 operators = ['==', '>', '<', '>=', '<=', '!=', 'of']
@@ -22,24 +22,17 @@ def is_valid_num(num):
     return False
 
 
-def get_user_input(input):
-    if '"' not in input or input.index('"') == input.rfind('"'):
+def get_user_input(user_input):
+    if '"' not in user_input or user_input.index('"') == user_input.rfind('"'):
         return INVALID_QUERY
-    return input[input.index('"') + 1:input.rfind('"')]
+    return user_input[user_input.index('"') + 1:user_input.rfind('"')]
 
-def help_menu():
-    menu = 'Queryable Column keywords: title, rating, year, duration, director, genre, viewers, rank \n' + \
-                'Query operators: ==, >,>=, <,<=, !=, of, all\nQuery Joiners: &&, ||\n' + \
-                'Query Structure: keyword operator "input" Optional: Joiner keyword operator "input"\n' + \
-                'Note: The query input is case sensitive and the inputs must be in quotes\n\n' + \
-                'Example query:\n> director of "Star Wars"\nGeorge Lucas\n'
 
-    return menu
-
-def input_not_found(list):
-    if len(list) == 1 and re.fullmatch(r"Could not find '.*' in database", list[0]):
+def input_not_found(input_list):
+    if len(input_list) == 1 and re.fullmatch(r"Could not find '.*' in database", input_list[0]):
         return True
     return False
+
 
 def help_menu():
     menu = ['Queryable column keywords: title, rating, year, duration, director, genre, viewers, rank',
@@ -52,6 +45,7 @@ def help_menu():
             '> director of "Star Wars"',
             'George Lucas']
     return menu
+
 
 def parse_query(query):
     if query in keywords:
@@ -99,7 +93,7 @@ def parse_query(query):
     for operator in operators:
         if f' {operator} ' in query:
             sliceIndex = query.index(f' {operator} ')
-            if (sliceIndex + 4 > len(query)):
+            if sliceIndex + 4 > len(query):
                 return INVALID_QUERY
             firstTerm = query[0:sliceIndex]
             secondTerm = query[sliceIndex + 4:len(query)]
@@ -130,16 +124,19 @@ def parse_query(query):
     return INVALID_QUERY
 
 
+def print_output(output_list):
+    rtn_str = ""
+    for item in output_list:
+        rtn_str += str(item) + "\n"
+    if rtn_str != "":
+        return rtn_str.rstrip('\n')
+    else:
+        return "N/A"
+
+
 if __name__ == '__main__':
     contQueries = True
     while contQueries:
         query = input("> ")
-        rtn_list = parse_query(query)
-        rtn_str = ""
-        for item in rtn_list:
-            rtn_str += item + "\n"
-        if (rtn_str != ""):
-            print(rtn_str.rstrip('\n'))
-        else:
-            print("N/A")
+        print(print_output(parse_query(query)))
     exit(0)
