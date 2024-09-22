@@ -1,10 +1,12 @@
 import parser
 
 
-def rank_equality_test():
+def rank_equality_test(): #TODO: fails because there is an extra newline at the end of result
     test_input = '"8"'
     expected = "Pulp Fiction"
     result = parser.parse_query('rank == ' + test_input)
+
+    print(result)
 
     if expected == result:
         print("PASSED rank_equality_test")
