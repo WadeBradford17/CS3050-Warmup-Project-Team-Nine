@@ -6,7 +6,7 @@
     "year": 1994,
     "rating": 9.3,
     "duration": 142,
-    "genre": "Drama",
+    "genre": ["Drama"],
     "director": "Frank Darabont"
   },
   {
@@ -18,7 +18,7 @@
     "duration": 175,
     "genre": ["Crime", "Drama"],
     "director": "Francis Ford Coppola",
-    "viewers": "Cam Kirn"
+    "viewers": ["Cam Kirn"]
   },
   {
     "uuid": "bdaabe59-de24-4c16-9d69-b504dc372d58",
@@ -122,7 +122,7 @@
     "year": 1999,
     "rating": 8.8,
     "duration": 139,
-    "genre": "Drama",
+    "genre": ["Drama"],
     "director": "David Fincher"
   },
   {
@@ -178,7 +178,7 @@
     "duration": 145,
     "genre": ["Biography", "Crime", "Drama"],
     "director": "Martin Scorsese",
-    "viewers": "Cam Kirn"
+    "viewers": ["Cam Kirn"]
   },
   {
     "uuid": "e760a7fd-8fe9-4045-8c5e-4fc6f43868a5",
@@ -187,7 +187,7 @@
     "year": 1975,
     "rating": 8.7,
     "duration": 133,
-    "genre": "Drama",
+    "genre": ["Drama"],
     "director": "Milos Forman"
   },
   {
@@ -199,7 +199,7 @@
     "duration": 127,
     "genre": ["Crime", "Drama", "Mystery"],
     "director": "David Fincher",
-    "viewers": "Max Schwarz"
+    "viewers": ["Max Schwarz"]
   },
   {
     "uuid": "f15ea316-0b18-4b95-9383-884af16925c3",
@@ -220,7 +220,7 @@
     "duration": 130,
     "genre": ["Drama", "Family", "Fantasy"],
     "director": "Frank Capra",
-    "viewers": "Jasper Henderson"
+    "viewers": ["Jasper Henderson"]
   },
   {
     "uuid": "76f34165-1af1-4a9a-aa50-caf4dde096f6",
