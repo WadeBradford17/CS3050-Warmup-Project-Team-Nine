@@ -166,7 +166,7 @@
     "rating": 8.7,
     "duration": 136,
     "genre": ["Action", "Sci-Fi"],
-    "director": "Lana Wachowski,Lilly Wachowski",
+    "director": "Lana Wachowski & Lilly Wachowski",
     "viewers": ["Wade Bradford", "Cam Kirn"]
   },
   {
@@ -240,7 +240,7 @@
     "rating": 8.6,
     "duration": 130,
     "genre": ["Crime", "Drama"],
-    "director": "Fernando Meirelles,Katia Lund"
+    "director": "Fernando Meirelles & Katia Lund"
   },
   {
     "uuid": "350a7cce-0dc8-4cb1-b00d-e6f321388644",
