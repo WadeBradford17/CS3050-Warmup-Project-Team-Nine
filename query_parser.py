@@ -1,6 +1,6 @@
 import re
 
-from firebase_interface import get_title_from_firestore, get_field_from_firestore, get_info_from_firestore, load_movies
+from firebase_interface import get_title_from_firestore, get_field_from_firestore, get_info_from_firestore, get_unique_entries_of_collection_from_firestore, load_movies
 
 fields = ['title', 'rating', 'year', 'duration', 'director', 'genre', 'viewers', 'rank']
 operators = ['==', '>', '<', '>=', '<=', '!=', 'of']
@@ -108,6 +108,8 @@ def parse_query(query):
                     if field == 'title' and input != 'all':
                         return INVALID_QUERY
                     if input == 'all':
+                        if field == 'genre' or field == 'viewers':
+                            return get_unique_entries_of_collection_from_firestore(field)
                         field_list = []
                         for movie in movies:
                             rtn_list = get_field_from_firestore(field, movie)
