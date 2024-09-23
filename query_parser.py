@@ -22,10 +22,12 @@ def is_valid_num(num):
     return False
 
 
-def get_user_input(user_input):
-    if '"' not in user_input or user_input.index('"') == user_input.rfind('"'):
+def get_user_input(query):
+    if '"' not in query or query.index('"') == query.rfind('"'):
+        if query[len(query) - 3:len(query)] == 'all':
+            return 'all'
         return INVALID_QUERY
-    return user_input[user_input.index('"') + 1:user_input.rfind('"')]
+    return query[query.index('"') + 1:query.rfind('"')]
 
 
 def input_not_found(input_list):
@@ -90,36 +92,31 @@ def parse_query(query):
             else:
                 return INVALID_QUERY
 
-    for operator in operators:
-        if f' {operator} ' in query:
-            sliceIndex = query.index(f' {operator} ')
-            if sliceIndex + 4 > len(query):
-                return INVALID_QUERY
-            firstTerm = query[0:sliceIndex]
-            secondTerm = query[sliceIndex + 4:len(query)]
-            input = get_user_input(query)
-            if input == INVALID_QUERY:
-                if secondTerm != 'all' or operator != 'of':
+    for field in fields:
+        for operator in operators:
+            if re.fullmatch(rf'{field} {operator} (".*"|all)', query):
+                input = get_user_input(query)
+                if input == 'all' and operator != 'of':
                     return INVALID_QUERY
-            if firstTerm in valid_eq_check and operator in eq_operators:
-                return get_title_from_firestore(firstTerm, operator, input)
-            elif firstTerm in valid_comp_check and operator in comp_operators:
-                if not is_valid_num(input):
-                    return INVALID_QUERY
-                return get_title_from_firestore(firstTerm, operator, float(input))
-            elif firstTerm in valid_belonging_check and operator == 'of':
-                if firstTerm == 'title' and secondTerm != 'all':
-                    return INVALID_QUERY
-                if secondTerm == 'all':
-                    field_list = []
-                    for movie in movies:
-                        rtn_list = get_field_from_firestore(firstTerm, movie)
-                        for item in rtn_list:
-                            if item not in field_list:
-                                field_list.append(item)
-                    return field_list
-                else:
-                    return get_field_from_firestore(firstTerm, input)
+                if field in valid_eq_check and operator in eq_operators:
+                    return get_title_from_firestore(field, operator, input)
+                elif field in valid_comp_check and operator in comp_operators:
+                    if not is_valid_num(input):
+                        return INVALID_QUERY
+                    return get_title_from_firestore(field, operator, float(input))
+                elif field in valid_belonging_check and operator == 'of':
+                    if field == 'title' and input != 'all':
+                        return INVALID_QUERY
+                    if input == 'all':
+                        field_list = []
+                        for movie in movies:
+                            rtn_list = get_field_from_firestore(field, movie)
+                            for item in rtn_list:
+                                if item not in field_list:
+                                    field_list.append(item)
+                        return field_list
+                    else:
+                        return get_field_from_firestore(field, input)
 
     return INVALID_QUERY
 
