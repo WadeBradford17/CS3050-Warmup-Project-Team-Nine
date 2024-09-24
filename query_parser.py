@@ -45,7 +45,8 @@ def help_menu():
             'Note: The query input is case sensitive and the inputs must be in double quotes',
             'Example query:',
             '> director of "Star Wars"',
-            'George Lucas']
+            'George Lucas',
+            'To see the movies availabe in the database, use the query "title of all"']
     return menu
 
 
