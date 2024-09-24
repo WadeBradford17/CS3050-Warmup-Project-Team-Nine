@@ -48,8 +48,11 @@ def get_field_from_firestore(field, title):
     for doc in docs:
         if field == 'genre' or field == 'viewers':
             entries = doc.to_dict().get(field)
-            for entry in entries:
-                fields.append(entry)
+            if entries is not None:
+                for entry in entries:
+                    fields.append(entry)
+            else:
+                fields.append(None)
         else:
             fields.append(doc.to_dict().get(field))
     if fields == []:
