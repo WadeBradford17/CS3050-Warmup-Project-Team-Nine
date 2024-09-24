@@ -325,7 +325,7 @@ def year_less_than_equal_test():
 
 
 def year_of_test():
-    test_input = 'The Dark Knight'
+    test_input = '"The Dark Knight"'
     expected = "2008"
     result = print_output(parse_query('year of ' + test_input))
 
@@ -338,7 +338,7 @@ def year_of_test():
 
 
 def viewers_equals_test():
-    test_input = '"Jasper"'
+    test_input = '"Jasper Henderson"'
     expected_set = {"It's a Wonderful Life",
                     "The Empire Strikes Back",
                     "Saving Private Ryan",
@@ -561,7 +561,7 @@ def extra_quotes():
 
     return
 
-"""
+
 rank_equality_test()
 rank_not_equal_test()
 rank_greater_than_test()
@@ -599,7 +599,7 @@ invalid_joiner_second_test()
 two_joiner_test()
 more_after_quotes()
 extra_quotes()
-"""
+
 
 # all movie titles set
 {"The Shawshank Redemption",
