@@ -586,7 +586,6 @@ def number_has_no_match_test():
 
 
 
-"""
 rank_equality_test()
 rank_not_equal_test()
 rank_greater_than_test()
@@ -625,8 +624,7 @@ two_joiner_test()
 more_after_quotes()
 extra_quotes()
 not_a_number_test()
-"""
-number_has_no_match_test() #TODO fix bug found here in output
+number_has_no_match_test()
 
 
 
