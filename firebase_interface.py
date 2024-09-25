@@ -38,7 +38,7 @@ def get_title_from_firestore(field, op, value):
                     titles.append(title)
 
     if titles == []:
-        titles.append(f"Could not find '{value}' in database")
+        titles.append(f"Could not find '{value:.0f}' in database")
     return titles
 
 
